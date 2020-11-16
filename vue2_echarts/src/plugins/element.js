@@ -1,6 +1,6 @@
-import Vue from "vue";
+import Vue from 'vue';
 import {
   Button
-} from "element-ui";
+} from 'element-ui';
 
 Vue.use(Button);
