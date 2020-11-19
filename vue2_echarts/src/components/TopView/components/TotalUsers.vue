@@ -1,15 +1,11 @@
 <template>
   <el-card class="warpper">
-    <top-title />
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
+    <top-title title="今天用户" value="2000" total="456789" />
   </el-card>
 </template>
 
 <script>
-import TopTitleMixin from '../../../mixins/TopTitleMixin';
+import TopTitleMixin from '@mixins/TopTitleMixin';
 export default {
   mixins: [TopTitleMixin]
 };
