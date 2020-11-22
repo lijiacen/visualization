@@ -3,9 +3,13 @@ import App from './App.vue';
 import router from './router';
 import './plugins/element';
 import Echarts from 'echarts';
+import VueECharts from 'vue-echarts';
+
+import './style/index.css';
 
 Vue.config.productionTip = false;
 Vue.prototype.$echarts = Echarts;
+Vue.component('v-chart', VueECharts);
 
 new Vue({
   router,
