@@ -2,7 +2,7 @@
   <el-card class="warpper">
     <top-title title="累计订单量" value="2,157,420">
       <template v-slot:chart>
-        <div class="orders-warpper" id="orders-warpper"></div>
+        <v-chart :options="getOption()" />
       </template>
       <template v-slot:footer>
         <span>昨日订单量</span>
@@ -16,38 +16,39 @@
 import TopTitleMixin from '@mixins/TopTitleMixin';
 export default {
   mixins: [TopTitleMixin],
-  mounted() {
-    const chart = this.$echarts.init(document.getElementById('orders-warpper'));
-    chart.setOption({
-      xAxis: {
-        type: 'category',
-        show: false,
-        boundaryGap: false
-      },
-      yAxis: {
-        show: false
-      },
-      series: [{
-        data: [820, 932, 901, 934, 1290, 1330, 1320, 932, 901, 934, 1290, 1330, 1320],
-        type: 'line',
-        areaStyle: {
-          color: 'purple'
+  methods: {
+    getOption() {
+      return {
+        xAxis: {
+          type: 'category',
+          show: false,
+          boundaryGap: false
         },
-        smooth: true,
-        lineStyle: {
-          width: 0
+        yAxis: {
+          show: false
         },
-        itemStyle: {
-          opacity: 0
+        series: [{
+          data: [820, 932, 901, 934, 1290, 1330, 1320, 932, 901, 934, 1290, 1330, 1320],
+          type: 'line',
+          areaStyle: {
+            color: 'purple'
+          },
+          smooth: true,
+          lineStyle: {
+            width: 0
+          },
+          itemStyle: {
+            opacity: 0
+          }
+        }],
+        grid: {
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0
         }
-      }],
-      grid: {
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0
-      }
-    });
+      };
+    }
   }
 };
 </script>
@@ -56,9 +57,5 @@ export default {
 .warpper {
   flex: 1;
   margin: 10px;
-  .orders-warpper {
-    margin-top: 10px;
-    height: 50px;
-  }
 }
 </style>

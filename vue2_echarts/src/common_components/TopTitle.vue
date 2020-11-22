@@ -2,9 +2,13 @@
   <div>
     <div class="title">{{title}}</div>
     <div class="value">{{value}}</div>
-    <slot name="chart"></slot>
+    <div class="chart">
+      <slot name="chart"></slot>
+    </div>
     <div class="line"></div>
-    <slot name="footer"></slot>
+    <div class="total">
+      <slot name="footer"></slot>
+    </div>
   </div>
 </template>
 
@@ -15,17 +19,20 @@ export default {
 </script>
 
 <style scoped>
+span {
+  font-size: 12px;
+}
 .title {
   font-size: 12px;
   color: #999;
-}
-span {
-  font-size: 12px;
 }
 .value {
   font-size: 25px;
   color: #000;
   margin-top: 5px;
+}
+.chart {
+  height: 50px;
 }
 .line {
   margin: 10px 0;

@@ -35,8 +35,7 @@ export default {
   flex: 1;
   margin: 10px;
   .compare-warpper {
-    height: 50px;
-    margin-top: 10px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
