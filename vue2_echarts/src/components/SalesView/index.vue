@@ -1,5 +1,5 @@
 <template>
-  <div class="warpper">
+  <div class="sales-warpper">
     <el-card>
       <template v-slot:header>
         <div class="menu-warpper">
@@ -121,7 +121,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.warpper {
+.sales-warpper {
   margin: 10px;
   .menu-warpper {
     display: flex;
