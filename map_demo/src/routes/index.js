@@ -6,6 +6,7 @@ const routes = [
   { path: '/async_map', component: React.lazy(() => import('../components/async_map')), name: '异步地图' },
   { path: '/layer_map', component: React.lazy(() => import('../components/layer_map')), name: '地图绘图' },
   { path: '/view_animation', component: React.lazy(() => import('../components/view_animation')), name: 'ViewAnimation' },
-  { path: '/track_animation', component: React.lazy(() => import('../components/track_animation')), name: 'TrackAnimation' }
+  { path: '/track_animation', component: React.lazy(() => import('../components/track_animation')), name: 'TrackAnimation' },
+  { path: '/point', component: React.lazy(() => import('../components/point')), name: '绘制点' }
 ];
 export default routes;

@@ -100,5 +100,42 @@
       }
       window.getBMapGLLib = getBMapGLLib;
     </script>
+    <script>
+      function getMapVLib() {
+        if (window.MapV) {
+          return new Promise((resolve, reject) => {
+            resolve(window.MapV);
+          });
+        } else {
+          var common_script = document.createElement("script");
+          common_script.src =
+            "https://mapv.baidu.com/gl/examples/static/common.js";
+          document.body.appendChild(common_script);
+
+          //懒加载百度地图MapV lib
+          var script = document.createElement("script");
+          script.src = "https://mapv.baidu.com/build/mapv.js";
+          document.body.appendChild(script);
+
+          //懒加载百度地图MapV lib
+          var script_mapvgl = document.createElement("script");
+          script_mapvgl.src =
+            "https://code.bdstatic.com/npm/mapvgl@1.0.0-beta.93/dist/mapvgl.min.js";
+          document.body.appendChild(script_mapvgl);
+
+          return new Promise((resolve, reject) => {
+            script_mapvgl.onload = () => {
+              window.MapV = mapv;
+              window.MapVGL = mapvgl;
+              resolve(window.MapV);
+            };
+            script_mapvgl.onerror = (error) => {
+              reject(error);
+            };
+          });
+        }
+      }
+      window.getMapVLib = getMapVLib;
+    </script>
   </body>
 </html>
