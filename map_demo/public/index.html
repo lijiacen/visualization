@@ -123,13 +123,19 @@
             "https://code.bdstatic.com/npm/mapvgl@1.0.0-beta.93/dist/mapvgl.min.js";
           document.body.appendChild(script_mapvgl);
 
+          //懒加载百度地图MapV lib
+          var script_mapvgl_three = document.createElement("script");
+          script_mapvgl_three.src =
+            "https://code.bdstatic.com/npm/mapvgl@1.0.0-beta.93/dist/mapvgl.threelayers.min.js";
+          document.body.appendChild(script_mapvgl_three);
+
           return new Promise((resolve, reject) => {
-            script_mapvgl.onload = () => {
+            script_mapvgl_three.onload = () => {
               window.MapV = mapv;
               window.MapVGL = mapvgl;
               resolve(window.MapV);
             };
-            script_mapvgl.onerror = (error) => {
+            script_mapvgl_three.onerror = (error) => {
               reject(error);
             };
           });
