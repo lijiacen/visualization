@@ -4,17 +4,23 @@
       <b-map></b-map>
     </div>
     <div class="right">
-      <div class="water"></div>
-      <div class="word"></div>
+      <div class="water">
+        <water></water>
+      </div>
+      <div class="word">
+        <word></word>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import bMap from './components/map';
+import water from './components/water';
+import word from './components/word';
 export default {
   components: {
-    bMap
+    bMap, water, word
   }
 };
 </script>
